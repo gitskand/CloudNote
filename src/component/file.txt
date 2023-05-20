@@ -1,0 +1,594 @@
+// import React, { useState } from 'react'
+
+// const Login = () => {
+
+//     const [credentials, setCredentials] = useState({ emial: "", password: "" })
+
+
+//     const handleSubmit = async (e) => {
+
+//         e.preventDefault()
+
+//         fetch()
+
+//         const response = await fetch("http://localhost:5000/api/auth/login", {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+
+//             },
+
+
+//             body: JSON.stringify({ email: credentials, email, password: credentials.password })
+
+
+//         });
+//         const json = await response.json();
+//         // setNotes(json || []);   
+
+//     }
+
+//     const onChange = (e) => {
+//         setCredentials({ ...credentials, [e.target.name]: e.target.value })
+//     }
+
+// };
+
+
+// return (
+
+
+//         <div>
+
+//             <form onSubmit={handleSubmit}>
+//                 <div className="form-group">
+//                     <label For="email">Email address</label>
+//                     <input type="email" className="form-control" id="email1" value={credentials.email} onChange={onchange} name="email" aria-describedby="emailHelp" placeholder="Enter email" />
+//                     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+//                 </div>
+//                 <div className="form-group">
+//                     <label htmlFor="password1">Password</label>
+//                     <input type="password" className="form-control" id="password1" value={credentials.password} onChange={onchange} name="password" placeholder="Password" />
+//                 </div>
+
+//                 <button type="submit" className="btn btn-primary" >Submit</button>
+//             </form>
+
+//         </div>
+
+
+// );
+// }
+
+
+
+// export default Login
+
+
+// import React, { useState } from 'react';
+// import { useNavigate} from 'react-router-dom';
+
+// const Login = () => {
+//     const [credentials, setCredentials] = useState({ email: '', password: '' });
+
+//     let navigate= useNavigate();
+
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         fetch();
+//         const response = await fetch('http://localhost:5000/api/auth/login', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({ email: credentials.email, password: credentials.password }),
+//         });
+//         const json = await response.json();
+
+//         console.log(json)
+
+//         if (json.success){
+
+//             //save the auth token and redirect
+
+//             localStorage.setItem("token", json.authtoken);
+//             navigate("/")
+//         }
+//         else{
+
+//             alert('you are a scammer')
+//         }
+//         // setNotes(json || []);
+//     };
+
+//     const onChange = (e) => {
+//         setCredentials({ ...credentials, [e.target.name]: e.target.value });
+//     };
+
+//     return (
+//         <div>
+//             <form onSubmit={handleSubmit}>
+//                 <div className="form-group">
+//                     <label htmlFor="email">Email address</label>
+//                     <input
+//                         type="email"
+//                         className="form-control"
+//                         id="email1"
+//                         value={credentials.email}
+//                         onChange={onChange}
+//                         name="email"
+//                         aria-describedby="emailHelp"
+//                         placeholder="Enter email"
+//                     />
+//                     <small id="emailHelp" className="form-text text-muted">
+//                         We'll never share your email with anyone else.
+//                     </small>
+//                 </div>
+//                 <div className="form-group">
+//                     <label htmlFor="password1">Password</label>
+//                     <input
+//                         type="password"
+//                         className="form-control"
+//                         id="password1"
+//                         value={credentials.password}
+//                         onChange={onChange}
+//                         name="password"
+//                         placeholder="Password"
+//                     />
+//                 </div>
+
+//                 <button type="submit" className="btn btn-primary">
+//                     Submit
+//                 </button>
+//             </form>
+//         </div>
+//     );
+// };
+
+// export default Login;
+
+
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// const Login = (props) => {
+//   const [credentials, setCredentials] = useState({ email: '', password: '' });
+
+//   const navigate = useNavigate();
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     try {
+//       const response = await fetch('http://localhost:5000/api/auth/login', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(credentials),
+//       });
+
+//       const data = await response.json();
+
+//       if (data.success) {
+//         // Save the auth token and redirect
+//         localStorage.setItem('token', data.authtoken);
+//         navigate('/');
+
+//         props.showAlert("Congratulations(: Logged in Successfully ", "primary")
+//       } else {
+//         props.showAlert('Unauthorized access. Please enter valid details.', "danger");
+//       }
+//     } catch (error) {
+      
+//       props.showAlert('Unauthorized access. Please enter valid details.', "danger");
+//     }
+//   };
+
+//   const onChange = (e) => {
+//     setCredentials({ ...credentials, [e.target.name]: e.target.value });
+//   };
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//         <div className="form-group">
+//           <label htmlFor="email">Email address</label>
+//           <input
+//             type="email"
+//             className="form-control"
+//             id="email1"
+//             value={credentials.email}
+
+//             onChange={onChange}
+//             name="email"
+//             aria-describedby="emailHelp"
+//             placeholder="Enter email"
+//           />
+//           <small id="emailHelp" className="form-text text-muted">
+//             We'll never share your email with anyone else.
+//           </small>
+//         </div>
+//         <div className="form-group">
+//           <label htmlFor="password1">Password</label>
+//           <input
+//             type="password"
+//             className="form-control"
+//             id="password1"
+//             value={credentials.password}
+//             onChange={onChange}
+//             name="password"
+//             placeholder="Password"
+//           />
+//         </div>
+
+//         <button type="submit" className="btn btn-primary">
+//           Submit
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+
+
+
+// import React, { useContext, useState } from 'react'
+// import noteContext from "../context/notes/noteContext"
+// import { AiOutlineEdit } from 'react-icons/ai';
+
+
+
+// const AddNote = () => {
+//     const context = useContext(noteContext);
+//     const { addNote } = context;
+
+//     const [note, setNote] = useState({ title: "", description: "", tag: "" })
+
+//     const handleClick = (e) => {
+//         e.preventDefault();
+//         addNote(note.title, note.description, note.tag);
+//         setNote=({title: "", description: "", tag: ""})
+//     }
+
+//     const onChange = (e) => {
+//         setNote({ ...note, [e.target.name]: e.target.value })
+//     }
+//     return (
+//         <div className="container my-3">
+//             <h2>Add a Note<AiOutlineEdit />
+
+//             </h2>
+//             <form className="my-3">
+//                 <div className="mb-3">
+//                     <label htmlFor="title" className="form-label">Title</label>
+//                     <input type="text" className="form-control" id="title" name="title" value={note.title} aria-describedby="emailHelp" onChange={onChange}  minLength={5} required/>
+//                 </div>
+//                 <div className="mb-3">
+//                     <label htmlFor="description" className="form-label">Description</label>
+//                     <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange}  minLength={5} required />
+//                 </div>
+//                 <div className="mb-3">
+//                     <label htmlFor="tag" className="form-label">Tag</label>
+//                     <input type="text" className="form-control" id="tsg" name="tag" value={note.tag} onChange={onChange}  minLength={5} required/>
+//                 </div>
+
+//                 <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note    </button>
+//             </form>
+//         </div>
+//     )
+// }
+
+// export default AddNote
+
+
+
+
+// import React, {useState} from 'react'
+// import { useNavigate } from 'react-router-dom';
+
+
+// const Signup = () => {
+
+//     const [credentials, setCredentials] = useState({ name:"", email: "", password: "", cpassword: "" });
+
+//     let navigate = useNavigate();
+
+
+//     const handleSubmit = async (e) => {
+//       e.preventDefault();
+
+//       const { name, email, password } = credentials;
+
+//       try {
+//         const response = await fetch('http://localhost:5000/api/auth/createnewuser', {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json',
+//           },
+//           body: JSON.stringify({ name, email, password }),
+//         });
+
+//         const json = await response.json();
+//         console.log(json);
+
+//         if (json.success) {
+//           // Save the auth token and redirect
+//           localStorage.setItem('token', json.authtoken);
+//           navigate("/signup");
+//         } else {
+//           alert('Invalid credentials. Please try again.');
+//         }
+//       } catch (error) {
+//         console.error(error);
+//         alert('An error occurred. Please try again.');
+//       }
+//     };
+
+//       const onChange = (e) => {
+//         setCredentials({ ...credentials, [e.target.name]: e.target.value });
+//       };
+
+
+
+//   return (
+//     <div>
+//       <form onSubmit={handleSubmit}>
+//   <div className="form-group">
+//     <label htmlFor="name">Enter Your Name</label>
+//     <input type="text" className="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter email"/>
+
+//   </div>
+
+//   <div className="form-group">
+//     <label htmlFor="email">Email address</label>
+//     <input type="email" className="form-control" id="email" name="email" onChange={onChange} aria-describedby="emailHelp" placeholder="Enter email"/>
+
+//   </div>
+
+//   <div className="form-group">
+//     <label htmlFor="password">Password</label>
+//     <input type="password" className="form-control" id="password" name="password" onChange={onChange} placeholder="Password"/>
+//   </div>
+//   <div className="form-group">
+//     <label htmlFor="cpassword">Confirm Password</label>
+//     <input type="password" className="form-control" id="cpassword" name="cpassword" onChange={onChange}  placeholder="Password"/>
+//   </div>
+
+//   <button type="submit" className="btn btn-primary">Submit</button>
+// </form>
+//     </div>
+//   )
+// }
+
+// export default Signup
+
+
+
+
+// import React, { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// const Signup = (props) => {
+//   const [credentials, setCredentials] = useState({
+//     name: '',
+//     email: '',
+//     password: '',
+//     cpassword: ''
+//   });
+//   const [error, setError] = useState('');
+
+//   let navigate = useNavigate();
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+
+//     const { name, email, password, cpassword } = credentials;
+
+//     if (password !== cpassword) {
+//       setError('Passwords do not match');
+//       return;
+//     }
+
+//     try {
+//       const response = await fetch('http://localhost:5000/api/auth/createnewuser', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ name, email, password })
+//       });
+
+//       const json = await response.json();
+
+//       if (json.success) {
+//         // Save the auth token and redirect
+//         localStorage.setItem('token', json.authtoken);
+//         navigate('/');
+
+//         props.showAlert("Congratulations(: Your Account has been created Successfully ", "primary")
+//       } else {
+//         setError(json.error);
+//       }
+//     } catch (error) {
+//       console.error(error);
+//       props.showAlert('An error occurred. Please try again.', "danger");
+//     }
+//   };
+
+//   const handleChange = (e) => {
+//     setCredentials({ ...credentials, [e.target.name]: e.target.value });
+//   };
+
+//   return (
+//     <div>
+//       {error && <p>{error}</p>}
+//       <form onSubmit={handleSubmit}>
+//         <div className="form-group">
+//           <label htmlFor="name">Enter Your Name</label>
+//           <input
+//             type="text"
+//             className="form-control"
+//             id="name"
+//             name="name"
+//             value={credentials.name}
+//             onChange={handleChange}
+//             placeholder="Enter your name"
+//             required
+//           />
+//         </div>
+
+//         <div className="form-group">
+//           <label htmlFor="email">Email address</label>
+//           <input
+//             type="email"
+//             className="form-control"
+//             id="email"
+//             name="email"
+//             value={credentials.email}
+//             onChange={handleChange}
+//             placeholder="Enter your email"
+//             required
+//           />
+//         </div>
+
+//         <div className="form-group">
+//           <label htmlFor="password">Password</label>
+//           <input
+//             type="password"
+//             className="form-control"
+//             id="password"
+//             name="password"
+//             value={credentials.password}
+//             onChange={handleChange}
+//             placeholder="Enter your password"
+//             required
+//           />
+//         </div>
+
+//         <div className="form-group">
+//           <label htmlFor="cpassword">Confirm Password</label>
+//           <input
+//             type="password"
+//             className="form-control"
+//             id="cpassword"
+//             name="cpassword"
+//             value={credentials.cpassword}
+//             onChange={handleChange}
+//             placeholder="Confirm your password"
+//             required
+//           />
+//         </div>
+
+//         <button type="submit" className="btn btn-primary">
+//           Submit
+//         </button>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default Signup;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // ROUTE 2: Authenticate a User using: POST "/api/auth/login". No login required
+  // router.post('/login', [
+  //   body('email', 'Enter a valid email').isEmail(),
+  //   body('password', 'Password cannot be blank').exists(),
+  // ], async (req, res) => {
+
+  //   let success= false
+
+  //   // If there are errors, return Bad request and the errors
+  //   const errors = validationResult(req);
+  //   if (!errors.isEmpty()) {
+  //     return res.status(400).json({ errors: errors.array() });
+  //   }
+
+  //   const { email, password } = req.body;
+  //   try {
+  //     let user = await User.findOne({ email });
+  //     if (!user) {
+
+  //       success= false
+  //       return res.status(400).json({ error: "Please try to login with correct credentials" });
+  //     }
+
+  //     const passwordCompare = await bcrypt.compare(password, user.password);
+  //     if (!passwordCompare) {
+
+  //       success= false
+  //       return res.status(400).json({ success, error: "Please try to login with correct credentials" });
+  //     }
+
+  //     const data = {
+  //       user: {
+  //         id: user.id
+  //       }
+  //     }
+  //     const authtoken = jwt.sign(data, JWT_SECRET);
+  //     success= true
+  //     res.json({ success, authtoken })
+
+      
+
+  //   } catch (error) {
+  //     console.error(error.message);
+  //     res.status(500).send("Internal Server Error");
+  //   }
+
+
+  // });
+
+
+
+
+
+// import React, { useContext } from 'react'
+// import noteContext from "../context/notes/noteContext"
+
+
+
+
+
+// const Noteitem = (props) => {
+//     const context = useContext(noteContext);
+    
+//     const { deleteNote, showAlert } = context;
+
+//     const { note, updateNote } = props;
+
+
+//     return (
+//         <div className="col-md-3">
+//             <div className="card my-3">
+//                 <div className="card-body">
+//                     <div className="d-flex align-items-center">
+//                         <h5 className="card-title">{note.title}</h5>
+//                         <i className="far fa-trash-alt mx-2" onClick={() => { deleteNote(note._id); showAlert("Deleted Successfully", "primary");}}></i>
+//                         <i className="far fa-edit mx-2" onClick={() => { updateNote(note) }}></i>
+
+//                     </div>
+//                     <p className="card-text">{note.description}</p>
+
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Noteitem

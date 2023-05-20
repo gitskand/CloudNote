@@ -36,3 +36,103 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  margin-top: 2px; /* Height of the fixed navbar */
+}
+
+.content-container {
+  padding-top: 20px; /* Add margin to the components */
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.custom-button {
+  color: black;
+  border: 2px solid green;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: green;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.custom-button:hover {
+  color: white;
+}
+
+.custom-button:hover::before {
+  width: 100%;
+}
+
+
+.custom-link-button {
+  color: black;
+  border: 1px solid blue;
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-link-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: blue;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.custom-link-button:hover {
+  color: white;
+}
+
+.custom-link-button:hover::before {
+  width: 100%;
+}
+
+
