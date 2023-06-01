@@ -1,7 +1,3 @@
-Local:            http://localhost:3000/CloudNote
-[0]   On Your Network:  http://192.168.43.105:3000/CloudNote
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
