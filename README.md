@@ -6,10 +6,12 @@ CloudNote offers users the ability to create their own notes and provides a rang
 
 To ensure the highest level of authentication security, i have implemented JSON Web Tokens (JWT) and bcrypt.js. Users can securely sign up and log in to the application, allowing them to access their saved notes from anywhere at any time.
 
+I have created internal APIs and endpoints to enable seamless communication between the frontend and backend components. 
+
 Key Features:
 
 1.Create, edit, and delete notes: CloudNote enables users to effortlessly create new notes, make changes to existing ones, and delete notes they no longer need.
-2.Secure user authentication: We have implemented industry-standard authentication mechanisms using JWT and bcrypt.js, ensuring that user credentials remain confidential and secure.
+2.Secure user authentication: I have implemented industry-standard authentication mechanisms using JWT and bcrypt.js, ensuring that user credentials remain confidential and secure.
 3.Data persistence: MongoDB serves as the backbone for our database operations, guaranteeing reliable and persistent storage of user notes.
 4.Responsive and intuitive UI: CloudNote's frontend, built with React.js, provides a seamless and user-friendly experience across devices and screen sizes.
 
