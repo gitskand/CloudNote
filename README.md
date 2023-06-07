@@ -2,7 +2,7 @@ CloudNote - Fullstack MERN Application
 
 Welcome to CloudNote! This is a fullstack application built using the MERN stack, incorporating cutting-edge technologies such as Express.js, Node.js, and MongoDB for efficient database operations. On the frontend, I have utilized React.js to create a seamless and intuitive user interface.
 
-CloudNote offers users the ability to create their own notes and provides a range of functionalities, including editing and deleting notes. This makes CloudNote a powerful CRUD (Create, Read, Update, Delete) application. We have placed utmost importance on user privacy and credential security throughout the development process.
+CloudNote offers users the ability to create their own notes and provides a range of functionalities, including editing and deleting notes. This makes CloudNote a powerful CRUD (Create, Read, Update, Delete) application. I have placed utmost importance on user privacy and credential security throughout the development process.
 
 To ensure the highest level of authentication security, i have implemented JSON Web Tokens (JWT) and bcrypt.js. Users can securely sign up and log in to the application, allowing them to access their saved notes from anywhere at any time.
 
