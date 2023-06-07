@@ -24,6 +24,6 @@ Getting Started:
 Contributing:
 I welcome contributions from the open-source community to further enhance CloudNote. If you find any bugs, have feature requests, or would like to make improvements, please submit a pull request.
 
-I hope you find CloudNote valuable and enjoy using it as much as we enjoyed developing it. Should you have any questions or encounter any issues, please don't hesitate to reach out to me at gaurskand@gmail.com.
+I hope you find CloudNote valuable and enjoy using it as much as i enjoyed developing it. If you have any questions or encounter any issues, please don't hesitate to reach out to me at gaurskand@gmail.com.
 
 Happy note-taking with CloudNote!
